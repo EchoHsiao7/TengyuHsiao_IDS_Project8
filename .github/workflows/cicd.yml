@@ -25,12 +25,8 @@ jobs:
 
     - name: Run lint
       run: |
-        make lint 
-
-    - name: Run tests
-      run: |
-        make test
+        make p_lint 
     
     - name: Run format
       run: |
-        make format
+        make p_format

@@ -1,7 +1,7 @@
-import matplotlib.pyplot as plt
 import polars as pl
 import time
 import psutil
+
 
 def read_data(file):
     df = pl.read_csv(file)
