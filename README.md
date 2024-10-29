@@ -1,44 +1,28 @@
-[![CI](https://github.com/EchoHsiao7/TengyuHsiao_IDS_Project7/actions/workflows/CI.yml/badge.svg)](https://github.com/EchoHsiao7/TengyuHsiao_IDS_Project7/actions/workflows/CI.yml)
+[![Python CI](https://github.com/EchoHsiao7/TengyuHsiao_IDS_Project8/actions/workflows/cicd.yml/badge.svg)](https://github.com/EchoHsiao7/TengyuHsiao_IDS_Project8/actions/workflows/cicd.yml)
+
+[![CI](https://github.com/EchoHsiao7/TengyuHsiao_IDS_Project8/actions/workflows/CI.yml/badge.svg)](https://github.com/EchoHsiao7/TengyuHsiao_IDS_Project8/actions/workflows/CI.yml)
 
 
-# Tengyu Hsiao Proejct 7
+# Tengyu Hsiao Proejct 8
 
 
-To work with this project, ensure you have the following installed on your system:
-- [Rust](https://www.rust-lang.org/): Click [here](https://www.rust-lang.org/tools/install) to install.
-- Cargo: Cargo is the Rust package manager, which is included with the Rust installation.
+## This project: 
 
-## 1. Clone the Repository
+1. Take an existing Python script for data processing
 
-   First, clone the repo using following:
+2. Rewrite it in Rust
 
-   ```bash
-   git clone https://github.com/EchoHsiao7/TengyuHsiao_IDS_Project7.git
-   ```
+3. Highlight improvements in speed and resource usage
 
-## 2. Build the Project
+## Improvement in speed and resource
 
+In python, I use psutil and time to measure the CPU resource and execution time of the script, here is the result:
+CPU Usage (%): 3.5
+Execution time: 0.0033
 
-   ```bash
-   cd TengyuHsiao_IDS_Project7
-   cargo build
-   ```
+In Rust, I use analysis and time to measure the CPU resource and execution time of the script, here is the result:
 
-## 3. Run the Project
+CPU Usage (%): 6.5
+Execution time (wall-clock time): 0.001278 seconds
 
-   ```bash
-   cargo run
-   ```
-
-   This will run the main program, which is a simple addition.
-
-## 4. Run Tests
-
-   ```bash
-   cargo test
-   ```
-
-   This command will run all the tests.
-
-
-
+It can be noticed that Rust has a faster execution time, but it would take a bit more CPU resource for this data processing project.
