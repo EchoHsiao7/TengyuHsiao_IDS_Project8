@@ -1,22 +1,31 @@
-all: check build format lint test
+all: install format lint test
 
-check:
-	cargo check
+install:
+	pip install --upgrade pip &&\
+		pip install -r requirements.txt
 
-build:
-	cargo build
-
-format:
-	cargo fmt
+format:	
+	black src --line-length 100 --verbose
 
 lint:
-	cargo clippy
+	ruff check src/ --fix --verbose
 
 test:
-	cargo test
-	
-test_main:
-	cargo test --test test_main
+	python -m pytest -vv src/
+	rm -rf *.png *.pdf
 
-release:
-	cargo build --release
+run:
+	python src/main.py
+
+rust_format:
+	cargo fmt --manifest-path ./analysis/Cargo.toml
+
+rust_lint:
+	cargo clippy --manifest-path ./analysis/Cargo.toml -- -D warnings
+
+
+rust_run:
+	cargo run --manifest-path ./analysis/Cargo.toml
+
+clean:
+	rm -rf $(VENV)
